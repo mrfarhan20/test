@@ -5,7 +5,7 @@ pipeline {
       APP_NAME = "BURGASM-APP"
   }
   parameters {
-      string(name: "FIRST_NAME", default: 'Mohammed')
+      string(name: "FIRST_NAME", defaultValue: 'Mohammed')
 
   }
 
