@@ -26,7 +26,7 @@ pipeline {
         stage("Deploy"){
             when {
                 expression {
-                    params.ENV = "DEV"
+                    params.ENV == "DEV"
                 }
             }
             steps {
