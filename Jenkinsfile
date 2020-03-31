@@ -26,7 +26,9 @@ pipeline {
 
         stage("Test") {
             steps {
-                echo 'echo Testing Stage'
+                script {
+                    groovy.testApp()
+                }
             }
         }
 
@@ -37,7 +39,9 @@ pipeline {
                 }
             }
             steps {
-                echo 'echo Deploying Stage'
+                script{
+                    groovy.deployApp()
+                }
             }
         }
     }   
