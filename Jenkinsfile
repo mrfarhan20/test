@@ -6,7 +6,7 @@ pipeline {
   }
   parameters {
       string(name: "FIRST_NAME", defaultValue: 'Mohammed')
-
+      choice(name: "ENV", choices: ['DEV', 'PROD'])
   }
 
   stages {
@@ -24,6 +24,11 @@ pipeline {
         }
 
         stage("Deploy"){
+            when {
+                expression {
+                    ENV = "DEV"
+                }
+            }
             steps {
                 echo 'echo Deploying Stage'
             }
