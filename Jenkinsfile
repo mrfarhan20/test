@@ -1,22 +1,27 @@
 pipeline {
   agent any
+  environment {
+      VERSION = "1.5.0"
+      APP_NAME = "BURGASM-APP"
+  }
 
   stages {
         stage("Build") {
             steps {
-                sh 'echo Building Stage'
+                echo 'echo Building Stage'
+                echo "The name of app is ${APP_NAME} and the version is ${VERSION}"
             }
         }
 
         stage("Test") {
             steps {
-                sh 'echo Testing Stage'
+                echo 'echo Testing Stage'
             }
         }
 
         stage("Deploy"){
             steps {
-                sh 'echo Deploying Stage'
+                echo 'echo Deploying Stage'
             }
         }
     }   
