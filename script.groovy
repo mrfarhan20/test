@@ -3,4 +3,4 @@ def buildApp() {
     echo "The name of app is ${APP_NAME} and the version is ${VERSION}"
 }
 
-return
+return this
