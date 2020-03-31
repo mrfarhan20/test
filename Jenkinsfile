@@ -4,6 +4,10 @@ pipeline {
       VERSION = "1.5.0"
       APP_NAME = "BURGASM-APP"
   }
+  parameters {
+      string(name: "FIRST_NAME", default: 'Mohammed')
+
+  }
 
   stages {
         stage("Build") {
