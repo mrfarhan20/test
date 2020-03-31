@@ -8,12 +8,19 @@ pipeline {
       string(name: "FIRST_NAME", defaultValue: 'Mohammed')
       choice(name: "ENV", choices: ['DEV', 'PROD'])
   }
-
   stages {
+        stage("Init"){
+            steps {
+                script{
+                    groovy = load "script.groovy"
+                }
+            }
+        }
         stage("Build") {
             steps {
-                echo 'echo Building Stage'
-                echo "The name of app is ${APP_NAME} and the version is ${VERSION}"
+                script {
+                    groovy.buildApp()
+                }
             }
         }
 
